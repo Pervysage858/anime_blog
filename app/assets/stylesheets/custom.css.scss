@@ -1,0 +1,55 @@
+@import "bootstrap";
+.navbar {
+	background-color: black !important;
+}
+
+.nav-link {
+	color: white !important;
+}
+
+
+h1 {
+	color: purple;
+}
+
+
+
+.navbar-brand {
+	color: white !important;
+	font-size: 1.7cm;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#home-container {
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+
+
+.jumbotron {
+	background-image: asset-url('luffy.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    height:500px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.card-header {
+	font-style: italic;
+}
