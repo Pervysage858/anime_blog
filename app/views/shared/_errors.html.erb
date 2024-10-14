@@ -1,10 +1,10 @@
-<% if @article.errors.any? %>
+<% if obj.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <div class="d-flex justify-content-between align-items-start">
       <div>
-        <strong>The following errors prevented the article from being saved:</strong>
+        <strong>The following errors prevented the <%= obj.class.name.downcase %> from being saved:</strong>
         <ul>
-          <% @article.errors.full_messages.each do |msg| %>
+          <% obj.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul> 
