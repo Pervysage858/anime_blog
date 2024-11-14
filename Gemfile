@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '~> 4.0'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -70,4 +72,5 @@ gem 'loofah', '~>2.19.1'
 gem "cocoon"
 # For sassc-rails
 gem 'sassc-rails'
-
+gem 'bundler'
+gem 'pry'

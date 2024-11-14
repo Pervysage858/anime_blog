@@ -6,11 +6,18 @@
 			<div class="card text-center shadow mb-5 bg-white rounded">
 			  <div class="card-header">
 			    by <%= @article.user.username if @article.user %>
+					</br>
+					<% if @article.categories.any? %>	
+					  <%= render @article.categories %>
+					<% end %>
 			  </div>
 			  <div class="card-body">
 			    <div class="card-text text-start"><%= simple_format(@article.description) %></div>
-				  <%= link_to "EDIT", edit_article_path(@article), class:"btn btn-outline-info" %>
-				  <%= link_to "DELETE", article_path(@article), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"}%>
+				  <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+					<%= link_to "EDIT", edit_article_path(@article), class:"btn btn-outline-info" %>
+					<%= link_to "DELETE", article_path(@article), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"}%>
+				  <% end %>
+				</div>
 			  </div>
 			  <div class="card-footer text-muted">
 			    <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
