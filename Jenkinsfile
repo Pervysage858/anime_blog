@@ -20,8 +20,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'snyk-api-token', variable: 'SNYK_TOKEN')]) {
-                        bat 'snyk auth $SNYK_TOKEN'
-                        bat 'snyk test'
+                        bat 'C:\\Users\\affan\\AppData\\Roaming\\npm\\snyk.cmd auth $SNYK_TOKEN'
+                        bat 'C:\\Users\\affan\\AppData\\Roaming\\npm\\snyk.cmd test'
                     }
                 }
             }
