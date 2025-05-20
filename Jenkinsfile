@@ -22,6 +22,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'snyk-api-token', variable: 'SNYK_TOKEN')]) {
                         bat 'C:\\Users\\affan\\AppData\\Roaming\\npm\\snyk.cmd auth $SNYK_TOKEN'
                         bat 'C:\\Users\\affan\\AppData\\Roaming\\npm\\snyk.cmd test --all-projects'
+                        bat 'C:\\Users\\affan\\AppData\\Roaming\\npm\\snyk.cmd monitor --all-projects'
                     }
                 }
             }
