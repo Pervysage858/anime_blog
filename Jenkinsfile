@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Run your build commands (example: npm install, mvn install)
-                sh 'echo "Build stage here..."'
+                bat 'echo "Build stage here..."'
             }
         }
 
@@ -20,8 +20,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'snyk-api-token', variable: 'SNYK_TOKEN')]) {
-                        sh 'snyk auth $SNYK_TOKEN'
-                        sh 'snyk test'
+                        bat 'snyk auth $SNYK_TOKEN'
+                        bat 'snyk test'
                     }
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Optional deployment logic
-                sh 'echo "Deploying..."'
+                bat 'echo "Deploying..."'
             }
         }
     }
